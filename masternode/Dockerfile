@@ -61,6 +61,13 @@ ADD config/mapred-site.xml $HADOOP_PREFIX/etc/hadoop/mapred-site.xml
 ADD config/yarn-site.xml $HADOOP_PREFIX/etc/hadoop/yarn-site.xml
 ADD slaves $HADOOP_PREFIX/etc/hadoop/slaves
 
+#####################################################################################################
+### Add bigram application to imgae
+RUN mkdir $HADOOP_PREFIX/bigram
+ADD bigram/*.py $HADOOP_PREFIX/bigram
+ADD bigram/testFile $HADOOP_PREFIX/bigram
+########################################################################################################
+
 # RUN $HADOOP_PREFIX/bin/hdfs namenode -format
 
 # fixing the libhadoop.so like a boss
@@ -108,3 +115,8 @@ EXPOSE 19888
 EXPOSE 8030 8031 8032 8033 8040 8042 8088
 #Other ports
 EXPOSE 49707 2122
+
+
+
+
+
