@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import sys
 
-urrentKey = None
+currentKey = None
 currentCnt = 0
 totalNum = 0
 result = []
@@ -23,7 +23,7 @@ totalNum += currentCnt
 result.append((currentKey, currentCnt))
 
 ##  Prepare for sorting
-#   set count as key, bigram as value 
+#   set count as key, bigram as value
 print '%s\t%s' % (totalNum+1, totalNum)
 for i in xrange(len(result)):
     print '%s\t%s' % (result[i][1], result[i][0])
